@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function InputForm({ setGuessResults }) {
+function InputForm({ setGuessResults, disabled }) {
   const [value, setValue] = useState("");
 
   const handleSubmit = (e) => {
@@ -16,6 +16,7 @@ function InputForm({ setGuessResults }) {
         id="guess-input"
         type="text"
         value={value}
+        disabled={disabled}
         onChange={(e) => setValue(e.target.value.toUpperCase())}
         pattern="[a-zA-Z]{5}"
         title="5 letter word"
